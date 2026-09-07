@@ -76,6 +76,24 @@ BROKERDESKMAIN/
 └── index.php       # Public home
 ```
 
+## Deploy on Render (GitHub → live site)
+
+Render has no native PHP runtime. This repo includes a `Dockerfile`.
+
+1. Create a **MySQL** database somewhere (Render does not provide MySQL). Free options: [Aiven](https://aiven.io/), [Railway](https://railway.app/), or another MySQL host.
+2. Import `Database/developers.sql`, then create the `request` table (see Installation above).
+3. On Render: New Web Service → connect `BROKERDESK` → Language **Docker** → prefer **Free** plan if shown.
+4. Add environment variables:
+
+| Key | Value |
+|-----|--------|
+| `DB_HOST` | your MySQL host |
+| `DB_USER` | your MySQL user |
+| `DB_PASS` | your MySQL password |
+| `DB_NAME` | your MySQL database name |
+
+5. Deploy. Open the Render URL when the build finishes.
+
 ## License
 
 Educational / demo project. Use and modify freely for learning.
