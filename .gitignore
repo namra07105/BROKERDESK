@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs & temp
+*.log
+*.tmp
+*.temp
+/tmp/
+
+# Local env overrides (keep config.php for XAMPP demo)
+.env
+.env.local
+
+# Optional: large/generated caches
+node_modules/
+vendor/
