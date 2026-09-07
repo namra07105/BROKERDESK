@@ -1,92 +1,172 @@
 /* =========================================================
-   BROKERDESK Admin – iPhone / Mobile polish
+   BROKERDESK Admin Header – accurate mobile layout
+   Overrides theme style.css conflicts on phones/tablets
    ========================================================= */
 
-.brokerdesk-admin-header {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  min-height: 60px;
-  padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left);
-  box-sizing: border-box;
+.header.brokerdesk-admin-header {
+  background: #ffbc34 !important;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12) !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  position: fixed !important;
+  z-index: 1050 !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  max-height: 56px !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
 }
 
 .brokerdesk-admin-header .admin-logo-lg {
-  max-height: 44px;
+  max-height: 40px;
   width: auto;
+  display: block;
 }
 
 .brokerdesk-admin-header .admin-logo-sm {
-  max-height: 36px;
+  max-height: 30px;
   width: auto;
+  display: block;
   object-fit: contain;
 }
 
 .brokerdesk-admin-header .admin-username {
   display: inline-block;
-  max-width: 140px;
-  color: #fff;
+  max-width: 120px;
+  color: #fff !important;
   font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 60px;
-  padding: 0 8px;
+  line-height: 1.2;
+  vertical-align: middle;
 }
 
-.brokerdesk-admin-header .user-menu {
-  margin: 0 !important;
-  padding-right: 10px !important;
-  display: flex !important;
-  align-items: center !important;
-  height: 60px;
-}
-
-.brokerdesk-admin-header .user-menu .nav-link {
-  padding: 8px !important;
-}
-
-.brokerdesk-admin-header .user-img img {
+.brokerdesk-admin-header .user-img img,
+.brokerdesk-admin-header .user-img .rounded-circle {
   width: 32px !important;
   height: 32px !important;
-  object-fit: cover;
+  object-fit: cover !important;
+  display: block !important;
 }
 
-/* ---------- Tablet & phone ---------- */
-@media (max-width: 991.98px) {
+/* Desktop / laptop: keep theme-like row */
+@media (min-width: 992px) {
   .header.brokerdesk-admin-header {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 1050;
-    height: 60px;
-    padding: 0 12px 0 52px !important;
+    display: block !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
   }
 
   .brokerdesk-admin-header .mobile_btn {
-    left: 8px !important;
-    width: 44px !important;
-    height: 60px !important;
-    line-height: 60px !important;
-    padding: 0 !important;
-    font-size: 22px !important;
-    z-index: 1060 !important;
+    display: none !important;
   }
 
   .brokerdesk-admin-header .header-left {
-    position: static !important;
-    width: auto !important;
-    float: none !important;
+    float: left;
+    width: 240px;
     height: 60px;
+    padding: 0 20px;
     display: flex !important;
     align-items: center;
-    flex: 1 1 auto;
-    min-width: 0;
+    justify-content: center;
+  }
+
+  .brokerdesk-admin-header .header-left .logo {
+    display: inline-flex !important;
+    align-items: center;
+    line-height: 1 !important;
+  }
+
+  .brokerdesk-admin-header .header-left .logo.logo-small {
+    display: none !important;
+  }
+
+  .brokerdesk-admin-header #toggle_btn {
+    display: inline-block;
+  }
+
+  .brokerdesk-admin-header .user-menu {
+    float: right;
+    height: 60px;
+    margin: 0;
+    padding-right: 12px;
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .brokerdesk-admin-header .admin-username-item {
+    display: flex !important;
+    align-items: center;
+    height: 60px;
+    padding: 0 6px;
+  }
+}
+
+/* ---------- Phone & tablet: strict 3-column header ---------- */
+@media (max-width: 991.98px) {
+  .header.brokerdesk-admin-header {
+    display: grid !important;
+    grid-template-columns: 48px 1fr 48px !important;
+    grid-template-rows: 56px !important;
+    align-items: center !important;
+    justify-items: center !important;
+    column-gap: 0 !important;
+    padding: 0 8px !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important;
+  }
+
+  /* Kill theme absolute full-width logo bar */
+  .header.brokerdesk-admin-header .header-left {
+    position: static !important;
+    float: none !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: 56px !important;
     padding: 0 !important;
     margin: 0 !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    z-index: 1 !important;
+  }
+
+  .brokerdesk-admin-header .mobile_btn {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 20px !important;
+    color: #fff !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    z-index: 2 !important;
+    border-radius: 8px;
+  }
+
+  .brokerdesk-admin-header #toggle_btn {
+    display: none !important;
   }
 
   .brokerdesk-admin-header .header-left .logo {
@@ -95,146 +175,121 @@
 
   .brokerdesk-admin-header .header-left .logo.logo-small {
     display: inline-flex !important;
-    align-items: center;
+    align-items: center !important;
+    justify-content: center !important;
     margin: 0 !important;
     padding: 0 !important;
+    line-height: 1 !important;
+    height: auto !important;
   }
 
   .brokerdesk-admin-header .header-left .logo.logo-small img {
-    max-height: 34px !important;
+    max-height: 28px !important;
     width: auto !important;
-    background: #fff;
+    max-width: 140px !important;
+    background: #ffffff;
     border-radius: 6px;
-    padding: 4px 8px;
+    padding: 5px 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
   }
 
-  /* Hide long username on phones – name is in avatar dropdown */
   .brokerdesk-admin-header .admin-username-item {
     display: none !important;
   }
 
   .brokerdesk-admin-header .user-menu {
-    position: absolute !important;
-    right: 8px !important;
-    top: 0 !important;
-    height: 60px !important;
+    position: static !important;
+    float: none !important;
+    height: 56px !important;
     margin: 0 !important;
     padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    z-index: 2 !important;
+  }
+
+  .brokerdesk-admin-header .user-menu > .nav-item {
+    margin: 0 !important;
+  }
+
+  .brokerdesk-admin-header .user-menu .nav-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+  }
+
+  .brokerdesk-admin-header .user-menu .dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+    top: 100% !important;
+    min-width: 200px;
   }
 
   .page-wrapper {
-    padding-top: 60px !important;
+    padding-top: 56px !important;
     margin-left: 0 !important;
   }
 
   .page-wrapper > .content {
-    padding: 16px 12px !important;
-  }
-
-  .page-header {
-    margin-bottom: 16px !important;
-  }
-
-  .page-header .page-title {
-    font-size: 22px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 6px !important;
-  }
-
-  .page-header p {
-    font-size: 13px !important;
-    margin-bottom: 8px !important;
-  }
-
-  .dash-widget,
-  .card {
-    margin-bottom: 14px !important;
-  }
-
-  .dash-widget-info h3,
-  .dash-widget h3 {
-    font-size: 26px !important;
-  }
-
-  .progress {
-    height: 6px !important;
-  }
-
-  .table-responsive {
-    margin-bottom: 12px;
-    border: 0;
-  }
-
-  .sidebar {
-    padding-top: 60px;
-  }
-}
-
-/* ---------- iPhone width ---------- */
-@media (max-width: 575.98px) {
-  .header.brokerdesk-admin-header {
-    padding: 0 8px 0 48px !important;
-  }
-
-  .brokerdesk-admin-header .mobile_btn {
-    left: 4px !important;
-  }
-
-  .brokerdesk-admin-header .user-menu {
-    right: 4px !important;
-  }
-
-  .page-wrapper > .content {
-    padding: 12px 10px !important;
+    padding: 14px 12px !important;
   }
 
   .page-header .page-title {
     font-size: 20px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4px !important;
   }
 
-  .col-xl-3,
-  .col-sm-6,
-  .col-12 {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+  .page-header p {
+    font-size: 13px !important;
   }
 
-  .card-body {
-    padding: 14px !important;
+  .sidebar {
+    padding-top: 56px !important;
+    z-index: 1040 !important;
   }
 
-  .btn {
-    max-width: 100%;
-  }
-
-  .dropdown-menu-right {
-    right: 0 !important;
-    left: auto !important;
+  .dash-widget,
+  .card {
+    margin-bottom: 12px !important;
   }
 }
 
-/* Safe area for notched iPhones */
+/* Narrow iPhones */
+@media (max-width: 390px) {
+  .brokerdesk-admin-header .header-left .logo.logo-small img {
+    max-width: 120px !important;
+    max-height: 26px !important;
+    padding: 4px 8px !important;
+  }
+}
+
+/* iPhone notch / safe area */
 @supports (padding: max(0px)) {
   @media (max-width: 991.98px) {
     .header.brokerdesk-admin-header {
-      padding-top: env(safe-area-inset-top);
-      height: calc(60px + env(safe-area-inset-top));
+      padding-top: env(safe-area-inset-top) !important;
+      height: calc(56px + env(safe-area-inset-top)) !important;
+      min-height: calc(56px + env(safe-area-inset-top)) !important;
+      max-height: calc(56px + env(safe-area-inset-top)) !important;
+      grid-template-rows: 56px !important;
+      align-content: end !important;
     }
 
     .page-wrapper {
-      padding-top: calc(60px + env(safe-area-inset-top)) !important;
+      padding-top: calc(56px + env(safe-area-inset-top)) !important;
     }
 
-    .brokerdesk-admin-header .mobile_btn,
-    .brokerdesk-admin-header .user-menu,
-    .brokerdesk-admin-header .header-left {
-      height: calc(60px + env(safe-area-inset-top)) !important;
-      padding-top: env(safe-area-inset-top);
-      box-sizing: border-box;
-    }
-
-    .brokerdesk-admin-header .mobile_btn {
-      line-height: 60px !important;
+    .sidebar {
+      padding-top: calc(56px + env(safe-area-inset-top)) !important;
     }
   }
 }
