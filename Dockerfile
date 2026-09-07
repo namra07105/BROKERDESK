@@ -9,14 +9,20 @@ RUN apt-get update && apt-get install -y \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /var/www/html
+# Railway sets PORT; make Apache listen on it
+ENV PORT=80
+RUN sed -i 's/80/${PORT}/g' /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf \
+    || true
 
+WORKDIR /var/www/html
 COPY . /var/www/html/
 
 RUN chown -R www-data:www-data /var/www/html \
     && find /var/www/html -type d -exec chmod 755 {} \; \
     && find /var/www/html -type f -exec chmod 644 {} \;
 
-EXPOSE 80
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-CMD ["apache2-foreground"]
+EXPOSE 80
+ENTRYPOINT ["docker-entrypoint.sh"]
