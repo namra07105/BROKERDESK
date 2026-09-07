@@ -4,7 +4,7 @@
 <!-- Mirrored from dreamguys.co.in/demo/ventura/form-basic-inputs.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 Aug 2019 04:41:04 GMT -->
 <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <title>Ventura - Basic Inputs</title>
 		
 		<!-- Favicon -->
@@ -22,6 +22,7 @@
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/responsive-fix.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/admin-mobile.css">
 		
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>

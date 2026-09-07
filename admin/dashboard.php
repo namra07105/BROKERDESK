@@ -167,7 +167,7 @@ $recent_properties = mysqli_query(
     <meta charset="utf-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=0">
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     <title>BROKERDESK - Dashboard</title>
 
@@ -219,6 +219,7 @@ $recent_properties = mysqli_query(
         rel="stylesheet"
         href="assets/css/style.css"
     <link rel="stylesheet" type="text/css" href="../css/responsive-fix.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/admin-mobile.css">
     >
 
 
