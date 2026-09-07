@@ -11,7 +11,7 @@ include("../config.php");
 
 if(!isset($_SESSION['uid']) || empty($_SESSION['uid']))
 {
-    header("Location:../login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -29,7 +29,7 @@ $agentQuery = mysqli_query(
 
 if(!$agentQuery)
 {
-    header("Location:../login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -37,7 +37,7 @@ if(mysqli_num_rows($agentQuery) == 0)
 {
     session_destroy();
 
-    header("Location:../login.php");
+    header("Location: login.php");
     exit();
 }
 

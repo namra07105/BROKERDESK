@@ -2,14 +2,25 @@
 
 session_start();
 
-/* Clear session */
+/* Clear all session data */
 $_SESSION = array();
 
-/* Destroy session */
+/* Expire the session cookie so logout sticks in the browser */
+if (ini_get('session.use_cookies')) {
+    $params = session_get_cookie_params();
+    setcookie(
+        session_name(),
+        '',
+        time() - 42000,
+        $params['path'],
+        $params['domain'],
+        $params['secure'],
+        $params['httponly']
+    );
+}
+
 session_destroy();
 
-/* Redirect to Agent Login */
-header("Location: login.php");
-exit();
-
-?>
+/* Always send agents back to agent login (not the public login) */
+header('Location: login.php');
+exit;

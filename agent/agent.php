@@ -8,7 +8,7 @@ include("../config.php");
    ========================================================= */
 
 if (!isset($_SESSION['uid'])) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit;
 }
 
@@ -20,7 +20,7 @@ $agent_check = mysqli_query(
 );
 
 if (!$agent_check || mysqli_num_rows($agent_check) == 0) {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit;
 }
 
