@@ -8,8 +8,11 @@ Version      : 1.0
     "use strict";
 	
 	// Variables declarations
-	
+	// Prefer .main-wrapper; fall back to body (BROKERDESK admin pages omit main-wrapper)
 	var $wrapper = $('.main-wrapper');
+	if (!$wrapper.length) {
+		$wrapper = $('body');
+	}
 	var $pageWrapper = $('.page-wrapper');
 	var $slimScrolls = $('.slimscroll');
 	
@@ -43,20 +46,56 @@ Version      : 1.0
 	
 	// Mobile menu sidebar overlay
 	
-	$('body').append('<div class="sidebar-overlay"></div>');
-	$(document).on('click', '#mobile_btn', function() {
-		$wrapper.toggleClass('slide-nav');
-		$('.sidebar-overlay').toggleClass('opened');
+	if (!$('.sidebar-overlay').length) {
+		$('body').append('<div class="sidebar-overlay"></div>');
+	}
+
+	function openMobileSidebar() {
+		$wrapper.addClass('slide-nav');
+		$('body').addClass('slide-nav');
+		$('.sidebar-overlay').addClass('opened');
 		$('html').addClass('menu-opened');
+	}
+
+	function closeMobileSidebar() {
+		$wrapper.removeClass('slide-nav');
+		$('body').removeClass('slide-nav');
+		$('.sidebar-overlay').removeClass('opened');
+		$('html').removeClass('menu-opened');
+	}
+
+	$(document).off('click.brokerdeskMobile', '#mobile_btn').on('click.brokerdeskMobile', '#mobile_btn', function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		if ($('body').hasClass('slide-nav') || $wrapper.hasClass('slide-nav')) {
+			closeMobileSidebar();
+		} else {
+			openMobileSidebar();
+		}
 		return false;
 	});
 	
-	// Sidebar overlay
+	// Sidebar overlay + Escape close
 	
-	$(".sidebar-overlay").on("click", function () {
-		$wrapper.removeClass('slide-nav');
-		$(".sidebar-overlay").removeClass("opened");
-		$('html').removeClass('menu-opened');
+	$(document).off('click.brokerdeskOverlay', '.sidebar-overlay').on('click.brokerdeskOverlay', '.sidebar-overlay', function () {
+		closeMobileSidebar();
+	});
+
+	$(document).off('keydown.brokerdeskEsc').on('keydown.brokerdeskEsc', function(e) {
+		if (e.key === 'Escape') {
+			closeMobileSidebar();
+		}
+	});
+
+	// Close drawer after tapping a real sidebar link on mobile
+	$(document).off('click.brokerdeskSideLink', '#sidebar-menu a').on('click.brokerdeskSideLink', '#sidebar-menu a', function() {
+		if ($(window).width() >= 992) {
+			return;
+		}
+		if ($(this).parent().hasClass('submenu')) {
+			return;
+		}
+		closeMobileSidebar();
 	});
 	
 	// Page Content Height

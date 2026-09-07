@@ -272,6 +272,73 @@
   }
 }
 
+/* ---------- Mobile sidebar drawer (hamburger) ---------- */
+@media (max-width: 991.98px) {
+  #sidebar.sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 260px !important;
+    max-width: 82vw !important;
+    margin-left: -280px !important;
+    padding-top: 56px !important;
+    background: #1b5a90 !important;
+    z-index: 1060 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    transition: margin-left 0.28s ease !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+  }
+
+  body.slide-nav #sidebar.sidebar,
+  .slide-nav #sidebar.sidebar,
+  .main-wrapper.slide-nav #sidebar.sidebar {
+    margin-left: 0 !important;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: 56px !important;
+    width: 100% !important;
+    height: auto !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+    z-index: 1055 !important;
+  }
+
+  .sidebar-overlay.opened {
+    display: block !important;
+  }
+
+  html.menu-opened,
+  html.menu-opened body {
+    overflow: hidden !important;
+  }
+
+  .brokerdesk-admin-header .mobile_btn {
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.25);
+    pointer-events: auto !important;
+  }
+
+  .brokerdesk-admin-header .mobile_btn:active {
+    background: rgba(0, 0, 0, 0.12);
+  }
+
+  #sidebar-menu ul li a {
+    color: #fff !important;
+  }
+
+  #sidebar-menu .menu-title span {
+    color: rgba(255, 255, 255, 0.65) !important;
+  }
+}
+
+
 /* iPhone notch / safe area */
 @supports (padding: max(0px)) {
   @media (max-width: 991.98px) {
