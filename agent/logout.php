@@ -9,7 +9,7 @@ $_SESSION = array();
 session_destroy();
 
 /* Redirect to Agent Login */
-header("Location: /BROKERDESK/BROKERDESKMAIN/agent/login.php");
+header("Location: login.php");
 exit();
 
 ?>

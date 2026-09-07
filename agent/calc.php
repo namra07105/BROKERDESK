@@ -277,7 +277,7 @@ body
     margin-right: 20px !important;
 
     background-image:
-        url('../images/EMI CALC IMG.jpg') !important;
+        url('../images/emi-calc.jpg') !important;
 
     background-size: cover !important;
 
@@ -1080,14 +1080,40 @@ body
                     <div class="emi-card-header">
 
                         <h3>
-                            Loan Payment Summary
+                            Loan Payment Calculator
                         </h3>
 
                         <p>
-                            Your calculated loan details are shown below.
+                            Enter loan details below to estimate your monthly payment.
                         </p>
 
                     </div>
+
+                    <form class="emi-form px-4 pb-4" method="post" action="calc.php">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="amount">Property / Loan Amount (₹)</label>
+                                <input type="number" min="1" step="1" class="form-control" id="amount" name="amount"
+                                       value="<?php echo htmlspecialchars((string)$amount); ?>"
+                                       placeholder="e.g. 2500000" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="month">Duration (Months)</label>
+                                <input type="number" min="1" step="1" class="form-control" id="month" name="month"
+                                       value="<?php echo htmlspecialchars((string)$mon); ?>"
+                                       placeholder="e.g. 240" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="interest">Interest Rate (% total)</label>
+                                <input type="number" min="0" step="0.01" class="form-control" id="interest" name="interest"
+                                       value="<?php echo htmlspecialchars((string)$int); ?>"
+                                       placeholder="e.g. 8.5" required>
+                            </div>
+                        </div>
+                        <button type="submit" name="calc" value="1" class="btn btn-primary px-4">
+                            Calculate EMI
+                        </button>
+                    </form>
 
 
                     <!-- =================================================

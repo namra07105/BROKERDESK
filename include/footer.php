@@ -675,7 +675,7 @@
                         </li>
 
                         <li>
-                            <a href="emi.php">
+                            <a href="calc.php">
                                 EMI Calculator
                             </a>
                         </li>

@@ -882,7 +882,7 @@ body
 
                     <li>
 
-                        <a href="emi.php">
+                        <a href="calc.php">
 
                             <i class="fas fa-chevron-right"></i>
 
