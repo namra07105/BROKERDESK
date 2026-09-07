@@ -1,0 +1,385 @@
+/* =========================================================
+   BROKERDESK – Global Responsive Fixes
+   Mobile / Tablet / Laptop
+   ========================================================= */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+iframe,
+svg,
+embed,
+object {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  max-width: 100%;
+}
+
+.table-responsive,
+.emi-table-wrap,
+.dataTables_wrapper {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent horizontal page scroll from fixed widths */
+body,
+#page-wrapper,
+.wrapper,
+.page-wrapper,
+.main-wrapper {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.container,
+.container-fluid,
+.footer-container {
+  max-width: 100%;
+}
+
+/* Forms */
+input,
+select,
+textarea,
+.form-control,
+.custom-select,
+button,
+.btn {
+  max-width: 100%;
+}
+
+.form-row > [class*="col-"] {
+  margin-bottom: 0.75rem;
+}
+
+/* Cards / grids */
+.property-card img,
+.featured-thumb img,
+.owl-carousel img,
+.agent-card img,
+.about-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Banners used across many pages (calc, about, etc.) */
+.page-banner {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+.page-banner .page-name,
+.banner-title,
+.page-name {
+  word-break: break-word;
+}
+
+/* Nav / header */
+.navbar-brand img,
+.brokerdesk-user-logo,
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.top-header .float-right {
+  float: none !important;
+}
+
+/* Sidebar widgets */
+.sidebar,
+.sidebar-widget {
+  max-width: 100%;
+}
+
+/* Admin layout helpers */
+.page-wrapper .content,
+.card,
+.card-body {
+  max-width: 100%;
+}
+
+.header .user-menu h4 {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  font-size: 14px;
+}
+
+/* ---------- Large laptops ---------- */
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 960px;
+  }
+
+  h1, .h1 { font-size: 2rem; }
+  h2, .h2 { font-size: 1.65rem; }
+}
+
+/* ---------- Tablets / small laptops ---------- */
+@media (max-width: 991.98px) {
+  .page-banner {
+    height: 280px !important;
+    min-height: 280px !important;
+  }
+
+  .page-banner .page-name {
+    font-size: 32px !important;
+  }
+
+  .navbar-toggler {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 6px 10px;
+  }
+
+  .navbar-collapse {
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    margin-top: 8px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .navbar-collapse .dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100%;
+    box-shadow: none;
+    border: 0;
+  }
+
+  .main-nav .navbar-nav .nav-link {
+    padding: 10px 0 !important;
+  }
+
+  .col-lg-4.col-md-12,
+  .col-lg-8.col-md-12,
+  .col-md-4,
+  .col-md-8,
+  .col-md-3,
+  .col-md-9 {
+    margin-bottom: 1rem;
+  }
+
+  .float-md-right,
+  .float-right {
+    float: none !important;
+  }
+
+  .text-md-right {
+    text-align: left !important;
+  }
+
+  /* Agent / user dashboards */
+  .dashboard-card,
+  .dash-widget,
+  .stat-card {
+    margin-bottom: 16px;
+  }
+
+  /* Admin sidebar: ensure content uses full width on tablet */
+  .mini-sidebar .page-wrapper {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Phones / large phones ---------- */
+@media (max-width: 767.98px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .page-banner {
+    height: 200px !important;
+    min-height: 200px !important;
+  }
+
+  .page-banner .page-name {
+    font-size: 24px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .full-row {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .emi-card,
+  .emi-section .container,
+  .request-card,
+  .property-list,
+  .login-box,
+  .register-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .emi-form .form-row > [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    white-space: normal;
+  }
+
+  .btn-block-xs {
+    display: block;
+    width: 100%;
+  }
+
+  /* Stack common two-column layouts */
+  .row > [class*="col-"] {
+    min-width: 0;
+  }
+
+  table.emi-table th,
+  table.emi-table td,
+  table th,
+  table td {
+    white-space: nowrap;
+  }
+
+  .breadcrumb {
+    flex-wrap: wrap;
+  }
+
+  /* Footer */
+  .brokerdesk-user-footer .footer-main,
+  .footer-widget {
+    text-align: left;
+  }
+
+  .brokerdesk-user-footer .col-md-3,
+  .brokerdesk-user-footer .col-md-4,
+  .brokerdesk-user-footer .col-lg-3 {
+    margin-bottom: 24px;
+  }
+
+  /* Hide less-critical top bar clutter on very small screens is already in theme;
+     keep contact readable when shown */
+  .top-header ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
+  /* Owl / sliders */
+  .owl-carousel .item {
+    padding: 0 6px;
+  }
+
+  /* Property filters / search bars */
+  .search-field,
+  .property-search,
+  .filter-form .form-group {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Admin */
+  .header .header-left {
+    position: relative;
+  }
+
+  .page-wrapper {
+    padding-top: 60px;
+  }
+
+  .content {
+    padding: 15px !important;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 575.98px) {
+  .page-banner {
+    height: 160px !important;
+    min-height: 160px !important;
+  }
+
+  .page-banner .page-name {
+    font-size: 20px !important;
+  }
+
+  h1, .h1 { font-size: 1.6rem; }
+  h2, .h2 { font-size: 1.35rem; }
+  h3, .h3 { font-size: 1.2rem; }
+
+  .btn {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+
+  .navbar-brand {
+    max-width: 160px;
+  }
+
+  .login-form,
+  .register-form,
+  .auth-form {
+    padding: 16px !important;
+  }
+}
+
+/* ---------- Landscape phones ---------- */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .page-banner {
+    height: 140px !important;
+    min-height: 140px !important;
+  }
+}
+
+/* ---------- Print (optional cleanliness) ---------- */
+@media print {
+  .top-header,
+  .navbar,
+  .footer,
+  .brokerdesk-user-footer,
+  .btn,
+  .mobile_btn {
+    display: none !important;
+  }
+}

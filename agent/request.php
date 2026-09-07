@@ -174,6 +174,7 @@ if(isset($_GET['delete']) && !empty($_GET['delete']))
     <link
         rel="stylesheet"
         href="../css/style.css"
+    <link rel="stylesheet" type="text/css" href="../css/responsive-fix.css">
     >
 
 

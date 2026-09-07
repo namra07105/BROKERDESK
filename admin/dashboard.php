@@ -218,6 +218,7 @@ $recent_properties = mysqli_query(
     <link
         rel="stylesheet"
         href="assets/css/style.css"
+    <link rel="stylesheet" type="text/css" href="../css/responsive-fix.css">
     >
 
 

@@ -297,6 +297,7 @@ if (count($property_images) > 0) {
     rel="stylesheet"
     type="text/css"
     href="css/style.css"
+    <link rel="stylesheet" type="text/css" href="css/responsive-fix.css">
 >
 
 

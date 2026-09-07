@@ -145,6 +145,7 @@ if(isset($_POST['send']))
     rel="stylesheet"
     type="text/css"
     href="../css/style.css"
+    <link rel="stylesheet" type="text/css" href="../css/responsive-fix.css">
 >
 
 

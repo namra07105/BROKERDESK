@@ -352,6 +352,7 @@ if(isset($_POST['add']))
     <link
         rel="stylesheet"
         href="../css/style.css"
+    <link rel="stylesheet" type="text/css" href="../css/responsive-fix.css">
     >
 
 

@@ -37,6 +37,7 @@ if(!isset($_SESSION['uemail']))
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive-fix.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
 
 <!--	Title

@@ -148,6 +148,7 @@ if(isset($_POST['login']))
         rel="stylesheet"
         type="text/css"
         href="../css/style.css"
+    <link rel="stylesheet" type="text/css" href="../css/responsive-fix.css">
     >
 
     <link
